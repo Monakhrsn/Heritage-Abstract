@@ -12,5 +12,15 @@ public class Company : Customer
         CompanyName = companyName;
         ContactPerson = contactPerson;
     }
+    
+    public string GetId()
+    {
+        return Id;
+    }
+
+    public void SetId(string id)
+    {
+        Id = "C-" + id;
+    }
 }
 

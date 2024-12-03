@@ -14,3 +14,6 @@ Company companyCustomer = new(
      "John"
     );
 
+privateCustomer.SetId("1");
+privateCustomer.GetId();
+

@@ -10,4 +10,14 @@ public class Private : Customer
         FirstName = firstName;
         LastName = lastName;
     }
+
+    public string GetId()
+    {
+        return Id;
+    }
+
+    public void SetId(string id)
+    {
+        Id = "P-" + id;
+    }
 }
