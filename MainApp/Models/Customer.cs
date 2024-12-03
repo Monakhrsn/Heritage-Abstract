@@ -2,8 +2,8 @@ namespace MainApp.Models;
 
 public abstract class Customer
 {
-    protected string Id { get; set; }
-    protected string Email { get; set; }
+    public string Id { get; protected set; }
+    public string Email { get; set; }
     
     protected Customer(string id, string email)
     {

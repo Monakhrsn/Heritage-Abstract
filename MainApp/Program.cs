@@ -14,6 +14,5 @@ Company companyCustomer = new(
      "John"
     );
 
-privateCustomer.SetId("1");
-privateCustomer.GetId();
+var id = privateCustomer.Id;
 
