@@ -1,18 +1,13 @@
 ﻿using MainApp.Models;
+var privateCustomer1 = new Private()
+{
+    Email = "test@test.com",
+    FirstName = "Test",
+};
 
-Private privateCustomer = new(
-    id: "1",
-    firstName: "John",
-    lastName: "Doe",
-    email: "john.doe@gmail.com"
-);
 
-Company companyCustomer = new(
-     "2",
-     "john.doe@gmail.com",
-     "Doe Company",
-     "John"
-    );
+privateCustomer1.SetSecurePassword("BytMig321!");
+var result = privateCustomer1.ValidateSecurePassword("BytMig321!");
 
-var id = privateCustomer.Id;
-
+Console.WriteLine(result);
+Console.ReadKey();

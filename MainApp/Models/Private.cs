@@ -1,23 +1,25 @@
+using System.Security.Cryptography;
+using System.Text;
+
 namespace MainApp.Models;
 
 public class Private : Customer
 {
+    private readonly string _saltKey = "ABC123";
+    
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    
-    public Private(string id, string firstName, string lastName, string email ) : base(id, email)
+
+
+    public override void SetSecurePassword(string password)
     {
-        FirstName = firstName;
-        LastName = lastName;
+        password = $"{_saltKey}{password}";
+        base.SetSecurePassword(password);
     }
 
-    public string GetId()
+    public override bool ValidateSecurePassword(string password)
     {
-        return Id;
-    }
-
-    public void SetId(string id)
-    {
-        Id = "P-" + id;
+        password = $"{_saltKey}{password}";
+        return base.ValidateSecurePassword(password);
     }
 }

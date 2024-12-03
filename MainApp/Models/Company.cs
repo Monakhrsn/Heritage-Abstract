@@ -1,26 +1,13 @@
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace MainApp.Models;
 
 public class Company : Customer
 {
-    public string CompanyName { get; set; }
-    public string ContactPerson { get; set; }
+    public string CompanyName { get; set; } = null!;
     
-    public Company (string id, string email, string companyName, string contactPerson) : base(id, email)
-    {
-        CompanyName = companyName;
-        ContactPerson = contactPerson;
-    }
-    
-    public string GetId()
-    {
-        return Id;
-    }
-
-    public void SetId(string id)
-    {
-        Id = "C-" + id;
-    }
+    public string ContactPerson { get; set; } = null!;
 }
 
